@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Service Workers</title>
+</head>
+<body>
+    <h3>Service workers: See console: </h3>
+<script>
+(() => {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker
+                      .register('service-worker.js')
+                      .then(
+                         registration => {
+                           console.log('registered');
+                           console.log(registration);
+                        },
+                          err => console.error(err)
+                      );
+        })
+                  
+    } else {
+        console.log('This browswer does not support sevice workers')
+    }
+})();
+
+// navigator.serviceWorker.register('scripts/trivia/service-worker.js', {scope: 'js'})
+</script>
+</body>
+</html>
