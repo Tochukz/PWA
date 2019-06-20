@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Lion",
+        "type": "Carnivore"
+    },
+    {
+        "name": "Sheep",
+        "type": "Herbivore"
+    },{
+        "name": "Chimmp",
+        "type": "Omnivore"
+    }
+]
