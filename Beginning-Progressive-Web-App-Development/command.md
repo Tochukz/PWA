@@ -26,8 +26,26 @@ __Useful dev tool option under application__
 Userfule link  
 [Is service worker reader](https://jakearchibald.github.io/isserviceworkerready/)  
 
-### Chapter 4: Caching and Offliine Funnctionaliity with Service Workers
+### Chapter 4: Caching and Offliine Functionaliity with Service Workers
 Install sw-precache globally  
 `$ npm install --global sw-precache`  
 Generate a service worker from the root of your project  
 `$ sw-precache`  
+Create a config file, sw-precache-config.js that tells sw-precache exactly what you want to cache  
+```
+module.exports = {
+    staticFileGlobs: [
+        'styles/**.css',
+        'styles/**.ttf',
+        'images/**.*',
+        '**.html'
+    ],
+    skipWaiting: true,
+    cacheId: 'version2'
+}
+```
+Run sw-precache again, specifying your config file:  
+`$ sw-precache --config=sw-precache-coonfig.js`  
+
+Warning: sw-toolbox and sw-precache are deprecated in favor of Workbox
+
